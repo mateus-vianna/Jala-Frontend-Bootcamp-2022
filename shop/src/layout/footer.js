@@ -1,7 +1,23 @@
 import react from "react";
 
 const Footer = () => {
-  return <footer>This is a footer</footer>;
+  return (
+    <footer
+      style={{
+        marginTop: 40,
+        marginLeft: 0,
+        marginRight: 0,
+        paddingBottom: 0,
+        backgroundColor: "black",
+        height: 175,
+        color: "green",
+        fontSize: 36,
+        textAlign: "center",
+      }}
+    >
+      This is a footer
+    </footer>
+  );
 };
 
 export default Footer;

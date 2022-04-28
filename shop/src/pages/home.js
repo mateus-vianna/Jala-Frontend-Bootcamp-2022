@@ -14,6 +14,7 @@ function Home() {
         <br />
         <Link to="ex">Ex</Link>
         <br />
+        <Link to="counter">Counter</Link>
       </nav>
     </>
   );
