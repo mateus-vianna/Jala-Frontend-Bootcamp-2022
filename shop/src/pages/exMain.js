@@ -15,7 +15,7 @@ import jaguar from "../assets/jaguar.jpeg";
 
 // const Main = ({ show }) => <>{show ? <Secret /> : <Default />}</>;
 
-const Main = () => {
+const ExMain = () => {
   const [checked, setChecked] = useReducer((checked) => !checked, true);
   // const [checked, setChecked] = useState(true);
   const [data, setData] = useState(null);
@@ -56,4 +56,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default ExMain;

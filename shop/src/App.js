@@ -1,7 +1,7 @@
 import "./App.css";
-import Main from "./components/main";
-import Footer from "./components/footer";
-import Header from "./components/header";
+import Main from "./layout/main";
+import Footer from "./layout/footer";
+import Header from "./layout/header";
 
 function App() {
   const show = false;
