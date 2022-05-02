@@ -3,29 +3,58 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const counter = useSelector((state) => state.allReducers.backpack.data);
-  console.log("%c%s", "color: #731d6d", JSON.stringify(counter));
+  const counter = useSelector((state) => state.persistedReducer.product.value);
 
   return (
-    <div style={{ marginLeft: 150 }}>
-      <div>
-        <h1>My Applciation</h1>
-        <nav>
-          <Link to="">Home</Link>
-          <br />
-          <Link to="store">Store</Link>
-          <br />
-          <Link to="about">About</Link>
-          <br />
-          <Link to="ex">Ex</Link>
-          <br />
-          <Link to="counter">Counter</Link>
-        </nav>
+    <>
+      <div
+        style={{
+          display: "grid",
+          columnGap: 25,
+          backgroundColor: "lightgreen",
+          boxShadow: "10px 10px 5px grey",
+        }}
+      >
+        <div
+          style={{ display: "inline-grid", gridRowStart: 1, marginLeft: 40 }}
+        >
+          <h1>Store</h1>
+        </div>
+
+        <div style={{ display: "inline-grid", gridRowStart: 1 }}>
+          <h2>
+            <Link to="">Home</Link>
+          </h2>
+        </div>
+
+        <div style={{ display: "inline-grid", gridRowStart: 1 }}>
+          <h2>
+            <Link to="store">Store</Link>
+          </h2>
+        </div>
+
+        <div style={{ display: "inline-grid", gridRowStart: 1 }}>
+          <h2>
+            <Link to="about">About</Link>
+          </h2>
+        </div>
+
+        <div style={{ display: "inline-grid", gridRowStart: 1 }}>
+          <h2>
+            <Link to="ex">Ex</Link>
+          </h2>
+        </div>
+
+        <div style={{ display: "inline-grid", gridRowStart: 1 }}>
+          <h2>
+            <Link to="counter">Counter</Link>
+          </h2>
+        </div>
       </div>
-      <div>
-        <h1>Here's the counter: {JSON.stringify(counter)}</h1>
-      </div>
-    </div>
+      {/* <div>
+        <h4>Here's the counter: {JSON.stringify(counter)}</h4>
+      </div> */}
+    </>
   );
 };
 

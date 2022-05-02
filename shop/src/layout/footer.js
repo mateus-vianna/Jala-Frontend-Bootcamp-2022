@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer
       style={{
-        marginTop: 40,
+        marginTop: 200,
         marginLeft: 0,
         marginRight: 0,
         paddingBottom: 0,

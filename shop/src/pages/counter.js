@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { increment } from "../redux/reducer/counterReducer";
-import { createBackpack } from "../redux/actions/backpackActions";
+import { addProduct } from "../redux/reducer/shopReducer";
 
 function Counter() {
   const dispatch = useDispatch();
@@ -19,7 +18,7 @@ function Counter() {
             backgroundColor: "black",
             color: "green",
           }}
-          onClick={() => dispatch(createBackpack({ id: 32, name: "mochila" }))}
+          onClick={() => dispatch(addProduct({ id: 1, name: "Something" }))}
         >
           <h2>Click me!</h2>
         </button>
