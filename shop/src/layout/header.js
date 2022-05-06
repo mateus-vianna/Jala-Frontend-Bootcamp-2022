@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const counter = useSelector((state) => state.persistedReducer.product.value);
+  const products = useSelector((state) => state.persistedReducer.product.value);
 
   return (
     <>
@@ -51,9 +51,9 @@ const Header = () => {
           </h2>
         </div>
       </div>
-      {/* <div>
-        <h4>Here's the counter: {JSON.stringify(counter)}</h4>
-      </div> */}
+      <div>
+        <h4>Here's the counter: {JSON.stringify(products)}</h4>
+      </div>
     </>
   );
 };
