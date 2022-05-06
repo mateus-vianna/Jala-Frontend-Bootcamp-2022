@@ -52,4 +52,3 @@ document.getElementById('css_class_with_out_dot')
 2 - Get all products saved inside the redux-store
 3 - Display those products and enable deleting each of them separately
 4 - Change the redux-store calls to redux-thunk to add, delete and display products directly from the API
-5 -
