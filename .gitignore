@@ -26,3 +26,30 @@ shop/.env.production.local
 shop/npm-debug.log*
 shop/yarn-debug.log*
 shop/yarn-error.log*
+
+
+
+
+
+
+# dependencies
+tsshop/node_modules
+tsshop/.pnp
+tsshop/.pnp.js
+
+# testing
+tsshop/coverage
+
+# production
+tsshop/build
+
+# misc
+tsshop/.DS_Store
+tsshop/.env.local
+tsshop/.env.development.local
+tsshop/.env.test.local
+tsshop/.env.production.local
+
+tsshop/npm-debug.log*
+tsshop/yarn-debug.log*
+tsshop/yarn-error.log*

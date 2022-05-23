@@ -48,6 +48,11 @@ document.getElementById('css_class_with_out_dot')
 
 ## TODO
 
+1 - Create a component that receives product data from the API using classes
+2 - Create a HOC component to display alerts of warning, error and info
+
+## DONE
+
 1 - Create a new route under the store page
 2 - Get all products saved inside the redux-store
 3 - Display those products and enable deleting each of them separately

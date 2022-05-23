@@ -1,0 +1,1 @@
+export type ContactName = string;

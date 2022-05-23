@@ -51,6 +51,24 @@ export const loadProductsThunk = () => async (dispatch, getState) => {
   }
 };
 
+export const addProductThunk = () => async (dispatch, getState) => {
+  try {
+  } catch (error) {}
+};
+
+export const removeProductThunk = (product) => async (dispatch, getState) => {
+  try {
+    let response = await fetch(
+      `http://localhost:5289/api/Products/${product.id}`,
+      {
+        method: "DELETE",
+      }
+    );
+    response = await response.json();
+    dispatch(removeProduct(response));
+  } catch (error) {}
+};
+
 export const { addProduct, removeProduct } = shopSlice.actions;
 
 export default shopSlice.reducer;

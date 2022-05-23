@@ -1,32 +1,36 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Home from "../pages/home";
-import ExMain from "../pages/exMain";
-import Store from "../pages/store";
+import Stock from "../pages/stock";
 import About from "../pages/about";
-import Banana from "../pages/fruits";
-import Potato from "../pages/potato";
+import ExMain from "../pages/exMain";
 import Counter from "../pages/counter";
-import { NotFound } from "../pages/notFound";
+import Store from "../pages/store";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 
-function Main() {
+export default function Main() {
   return (
-    <div style={{ marginLeft: 100 }}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/ex" element={<ExMain />} />
-        <Route path="/store" element={<Store />}>
-          <Route path="fruits" element={<Banana />} />
-          <Route path="potato" element={<Potato />} />
-        </Route>
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/about" element={<About />} />
-
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+    <div style={{ marginTop: 80 }}>
+      <Container fixed>
+        <Box
+          sx={{
+            maxHeight: { xs: 200, sm: 300, md: 300, lg: 700 },
+            minHeight: { xs: 200, sm: 300, md: 300, lg: 535 },
+            maxWidth: { xs: 150, sm: 300, md: 600, lg: 1250 },
+            minWidth: { xs: 150, sm: 300, md: 900, lg: 1250 },
+          }}
+        >
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/stock" element={<Stock />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/counter" element={<Counter />} />
+            <Route path="/ex" element={<ExMain />} />
+          </Routes>
+        </Box>
+      </Container>
     </div>
   );
 }
-
-export default Main;

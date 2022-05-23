@@ -1,16 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import {
-  loadProductsThunk,
-  removeProductThunk,
-} from "../redux/reducer/shopReducer";
+import { loadProductsThunk } from "../redux/thunks/shopThunks";
 
 function Counter() {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadProductsThunk());
-  });
 
   return (
     <div>
@@ -25,7 +18,7 @@ function Counter() {
             backgroundColor: "black",
             color: "green",
           }}
-          onClick={() => dispatch(removeProductThunk({ id: 3 }))}
+          onClick={() => dispatch(loadProductsThunk())}
         >
           <h2>Click me!</h2>
         </button>
