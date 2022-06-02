@@ -53,3 +53,9 @@ tsshop/.env.production.local
 tsshop/npm-debug.log*
 tsshop/yarn-debug.log*
 tsshop/yarn-error.log*
+
+
+#back-end
+back-end/node_modules
+back-end/.env
+back-end/package-lock.json

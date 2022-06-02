@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Message from './components/Message';
-
-
+import Footer from './layout/footer';
+import Header from './layout/header';
+import Main from './layout/main';
 
 
 
 class App extends Component {
-this.arr(){ 
-  
-}
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <Message />
-        </header>
-      </div>);
-  }
 
+  render(): React.ReactNode {
+
+    return (
+      <>
+        <Header />
+        <Main />
+        <Footer />
+      </>);
+  }
 }
 
 export default App;
