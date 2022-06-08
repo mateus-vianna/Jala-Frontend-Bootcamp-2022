@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { getDbConnection } from '../db';
 
 export const logInRoute = {
-    path: '/api/login',
+    path: '/api/auth/login',
     method: 'post',
     handler: async (req, res) => {
         const { email, password } = req.body;

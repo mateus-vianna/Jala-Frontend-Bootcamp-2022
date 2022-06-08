@@ -3,18 +3,17 @@ import React, { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import IUser from "../interfaces/IUser";
 import { UserToken } from '../auth/userToken';
+import userService from "../services/userService";
 
 const Login = () => {
     const [, setToken] = UserToken();
     const [user, setUser] = useState({ email: '', password: '' } as IUser)
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        const response: IUser = user;
-        const token: string = '892387434732';
-        setToken(token);
+    const handleLogin = async () => {
+        const response: any = await userService.login(user);
+        setToken(response.token);
         navigate('/')
-        alert('To be implemented');
     }
 
     return (

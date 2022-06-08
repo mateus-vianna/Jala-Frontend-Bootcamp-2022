@@ -1,6 +1,6 @@
 import { AppBar, Box, Button, Toolbar } from "@mui/material";
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 
 interface IPage {
@@ -8,13 +8,15 @@ interface IPage {
     link: JSX.Element
 }
 
-class Header extends Component {
-    constructor(props: any) {
-        super(props);
-        this.state = {}
+const Header = () => {
+    const navigate = useNavigate();
+
+    const handlerLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/products')
     }
 
-    pages: IPage[] = [
+    const pages: IPage[] = [
         { page: "Home", link: <Link to="">Home</Link> },
         { page: "Products", link: <Link to="products">Products</Link> },
         { page: "CreateProduct", link: <Link to="create">Create Product</Link> },
@@ -23,24 +25,26 @@ class Header extends Component {
         { page: "About", link: <Link to="about">About</Link> },
     ];
 
-    render() {
-        return (<>
-            <AppBar position="static">
-                <Toolbar variant="dense" sx={{ bgcolor: "lightcyan" }} >
-                    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                        {this.pages.map((page) => (
-                            <Button
-                                key={page.page}
-                                sx={{ my: 2, color: "white", display: "block" }}
-                            >
-                                {page.link}
-                            </Button>
-                        ))}
-                    </Box>
-                </Toolbar>
-            </AppBar>
-        </>)
-    }
+
+    return (<>
+        <AppBar position="static">
+            <Toolbar variant="dense" sx={{ bgcolor: "lightcyan" }} >
+                <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+                    {pages.map((page) => (
+                        <Button
+                            key={page.page}
+                            sx={{ my: 2, color: "white", display: "block" }}
+                        >
+                            {page.link}
+                        </Button>
+                    ))}
+                </Box>
+                <Box sx={{ display: { xs: "none", md: "flex", marginLeft: 0 } }}>
+                    <Button onClick={() => handlerLogout()}> Logout</Button>
+                </Box>
+            </Toolbar>
+        </AppBar>
+    </>)
 }
 
 export default Header;

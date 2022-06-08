@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { UserToken } from "../auth/userToken";
 import PrivateRoute, { ProtectedRouteProps } from "../components/PrivateRoute";
 import About from "../pages/about";
 import CreateProduct from "../pages/createProduct";
@@ -14,10 +13,8 @@ import Stock from "../pages/stock";
 import User from "../pages/user";
 
 const Main: React.FC = () => {
-    const [token,] = UserToken();
 
     const defaultProtectedRouteProps: Omit<ProtectedRouteProps, 'outlet'> = {
-        isAuthenticated: !!token,
         authenticationPath: '/login',
     };
 
@@ -25,7 +22,7 @@ const Main: React.FC = () => {
         <>
             <Box sx={{ width: '100%', height: '100%' }}>
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<PrivateRoute {...defaultProtectedRouteProps} outlet={<Home />}></PrivateRoute>} />
                     <Route path='/products' element={<PrivateRoute {...defaultProtectedRouteProps} outlet={<Products />}></PrivateRoute>} />
                     <Route path='/stock' element={<PrivateRoute {...defaultProtectedRouteProps} outlet={<Stock />}></PrivateRoute>} />
                     <Route path='/user' element={<PrivateRoute {...defaultProtectedRouteProps} outlet={<User />}></PrivateRoute>} />

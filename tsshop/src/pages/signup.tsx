@@ -2,17 +2,28 @@ import { Button } from "@mui/material";
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import IUser from "../interfaces/IUser";
+import { UserToken } from '../auth/userToken';
+import userService from "../services/userService";
 
 const Signup = () => {
     const [user, setUser] = useState({ name: '', email: '', password: '', confirmPass: '' } as IUser)
     const navigate = useNavigate();
+    const [token, setToken] = UserToken();
 
-    const handleSignup = (): void => {
+    const handleSignup = async (): Promise<void> => {
         if (!(user.confirmPass === user.password)) {
             alert(`Passwords doesn't match`);
             return;
         }
-        navigate('/home');
+        try {
+            const response: any = await userService.signup(user);
+            setToken(response.token);
+            navigate('/');
+
+        } catch (error) {
+            console.log('%c%s', 'color: #364cd9', error);
+            alert('User was not created');
+        }
     }
 
     const handleValidation = (): boolean => {
