@@ -6,9 +6,9 @@ import { UserToken } from '../auth/userToken';
 import userService from "../services/userService";
 
 const Signup = () => {
-    const [user, setUser] = useState({ name: '', email: '', password: '', confirmPass: '' } as IUser)
+    const [user, setUser] = useState({ name: '', email: '', gender: '', age: '', password: '', confirmPass: '' } as IUser)
     const navigate = useNavigate();
-    const [token, setToken] = UserToken();
+    const [, setToken] = UserToken();
 
     const handleSignup = async (): Promise<void> => {
         if (!(user.confirmPass === user.password)) {
@@ -18,7 +18,7 @@ const Signup = () => {
         try {
             const response: any = await userService.signup(user);
             setToken(response.token);
-            navigate('/');
+            navigate('/please-very');
 
         } catch (error) {
             console.log('%c%s', 'color: #364cd9', error);
@@ -43,6 +43,18 @@ const Signup = () => {
                 value={user.email}
                 placeholder="your@email.com"
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
+            />
+            <br />
+            <input
+                value={user.gender}
+                placeholder="masculine/feminine/other"
+                onChange={(e) => setUser({ ...user, gender: e.target.value })}
+            />
+            <br />
+            <input
+                value={user.age}
+                placeholder="your age"
+                onChange={(e) => setUser({ ...user, age: e.target.value })}
             />
             <br />
             <input

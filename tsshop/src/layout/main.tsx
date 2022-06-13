@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import PrivateRoute, { ProtectedRouteProps } from "../components/PrivateRoute";
 import About from "../pages/about";
 import CreateProduct from "../pages/createProduct";
+import EmailVerification from "../pages/emailVerification";
 import Home from "../pages/home";
 import Login from "../pages/login";
 import NotFound from "../pages/notfound";
@@ -11,6 +12,7 @@ import Products from "../pages/products";
 import Signup from "../pages/signup";
 import Stock from "../pages/stock";
 import User from "../pages/user";
+import VerifyEmail from "../pages/verifyEmail";
 
 const Main: React.FC = () => {
 
@@ -30,9 +32,9 @@ const Main: React.FC = () => {
                     <Route path='/about' element={<About />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
+                    <Route path='/please-very' element={<EmailVerification />} />
+                    <Route path='/verify-email/:verificationCode' element={<VerifyEmail />} />
                     <Route path='*' element={<NotFound />} />
-
-                    {/* <Route path="*" element={​<Navigate to="."/>}​ /> */}
 
                 </Routes>
             </Box>

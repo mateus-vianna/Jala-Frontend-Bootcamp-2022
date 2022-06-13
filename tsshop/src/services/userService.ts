@@ -1,8 +1,10 @@
 import { Service } from './service';
 import IUser from '../interfaces/IUser';
 import { USER_API, API_ENDPOINT } from '../config';
+import { IVerificationCode } from '../interfaces/IVerificationCode';
 
 const url = API_ENDPOINT + USER_API;
+
 export class UserService {
   constructor(private service: Service) { }
 
@@ -23,6 +25,16 @@ export class UserService {
         console.log('user service signup error:', err);
       })
   };
+
+  public emailVerification = async (verificationCode: any) => {
+    return this.service
+      .put(url + `/verify-email`, verificationCode)
+      .then(response => response.data)
+      .catch(err => {
+        console.log('user service email verification error: ', err)
+      })
+  }
+
 }
 
 

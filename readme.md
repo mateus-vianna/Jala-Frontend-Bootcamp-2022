@@ -48,8 +48,10 @@ document.getElementById('css_class_with_out_dot')
 
 ## TODO
 
+1 - Create a reset password page
+2 - Create reset password API call via email
+3 - Create reset password page that receives uuid from back end reset password call
 
-2 - Create a HOC component to display alerts of warning, error and info
 
 ## DONE
 
@@ -58,3 +60,4 @@ document.getElementById('css_class_with_out_dot')
 3 - Display those products and enable deleting each of them separately
 4 - Change the redux-store calls to redux-thunk to add, delete and display products directly from the API
 5 - Create a component that receives product data from the API using classes
+6 - Create a HOC component to display alerts of warning, error and info
