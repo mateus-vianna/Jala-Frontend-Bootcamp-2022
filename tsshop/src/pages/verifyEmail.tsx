@@ -9,7 +9,6 @@ import userService from '../services/userService';
 
 const VerifyEmail = () => {
     const param = useParams();
-    console.log('%c%s', 'color: #9c66cc', JSON.stringify(param));
     const user = useUser();
     const [, setToken] = UserToken();
     const initialize = async () => {

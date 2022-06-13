@@ -24,7 +24,7 @@ export const VerifyEmailCode = {
             const db = getDbConnection('react-auth-db');
             await db.collection('users').updateOne({_id: ObjectID(id)},{$set:{isVerified: true}});
             
-            const result = db.collection('users').findOne({verificationString})
+            const result = await db.collection('users').findOne({verificationString})
             const { email, name, age, gender } = result; 
 
             

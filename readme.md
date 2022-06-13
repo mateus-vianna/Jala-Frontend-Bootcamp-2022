@@ -48,9 +48,10 @@ document.getElementById('css_class_with_out_dot')
 
 ## TODO
 
-1 - Create a reset password page
-2 - Create reset password API call via email
+1 - Create a reset password page(email, name, birthdate)
+2 - Create  authentication via email call to validate user
 3 - Create reset password page that receives uuid from back end reset password call
+4 - Create API reset password call
 
 
 ## DONE
