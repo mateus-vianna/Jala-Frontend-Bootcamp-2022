@@ -13,7 +13,7 @@ const VerifyEmail = () => {
     const [, setToken] = UserToken();
     const initialize = async () => {
         const response = await userService.emailVerification(param as unknown as IVerificationCode);
-        setToken(response)
+        setToken(response.token);
     }
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const VerifyEmail = () => {
     }, [])
 
     useEffect(() => {
-        console.log('%c%s', 'color: #ff0000', user);
+        console.log('%c%s', 'color: #ff0000', JSON.stringify(user));
     })
 
     return (<>

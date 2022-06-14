@@ -12,7 +12,7 @@ export const VerifyEmailCode = {
         if (!authorization) {
             return res.status(401).json({ message: 'No authorization header sent' });
         }
-
+      
         const token = authorization.split(' ')[1];
 
         jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
@@ -21,7 +21,7 @@ export const VerifyEmailCode = {
             console.log('Check objectId:', ObjectID(id))
             if(!(verificationCode === verificationString)) return res.status(403).json({message:'You need to verify your email again'});
 
-            const db = getDbConnection('react-auth-db');
+            const db = getDbConnection(process.env.DB_NAME);
             await db.collection('users').updateOne({_id: ObjectID(id)},{$set:{isVerified: true}});
             
             const result = await db.collection('users').findOne({verificationString})

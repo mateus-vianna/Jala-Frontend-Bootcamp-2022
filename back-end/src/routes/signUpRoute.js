@@ -35,7 +35,7 @@ export const signUpRoute = {
 
         try {
             await sendEmail({
-                to:email,
+                to:email, //mawavial@gmail.com
                 from: process.env.SENDGRID_SENDER_MAIL,
                 subject: 'Please verify your email',
                 text: `Thanks for signing up! To verify yoiur email, click here: ${process.env.FRONT}/verify-email/${verificationString}`
