@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         <h2>Dois</h2>
         <h2>Mais</h2>
         <h2>Tres</h2>
-        {stock.map((iten: any) => {
+        {stock?.map((iten: any) => {
             return <p>{iten}</p>
         })}
         <span>Outro</span>
