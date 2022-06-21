@@ -29,7 +29,6 @@ export const updateUserInfoRoute = {
 
         jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
             if (err) return res.status(401).json({ message: 'Unable to verify token' });
-            console.log('%c%s', 'color: #d0bfff', decoded);
             const { id, isVerified } = decoded;
 
             if (id !== userId) return res.status(403).json({ message: 'Not allowed to update that user\'s data' });

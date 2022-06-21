@@ -22,7 +22,7 @@ const Main: React.FC = () => {
 
     return (
         <>
-            <Box sx={{ width: '100%', height: '100%' }}>
+            <div className="content-wrapper">
                 <Routes>
                     <Route path='/' element={<PrivateRoute {...defaultProtectedRouteProps} outlet={<Home />}></PrivateRoute>} />
                     <Route path='/products' element={<PrivateRoute {...defaultProtectedRouteProps} outlet={<Products />}></PrivateRoute>} />
@@ -37,7 +37,7 @@ const Main: React.FC = () => {
                     <Route path='*' element={<NotFound />} />
 
                 </Routes>
-            </Box>
+            </div>
         </>
     )
 }

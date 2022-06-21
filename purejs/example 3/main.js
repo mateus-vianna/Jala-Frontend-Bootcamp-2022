@@ -14,6 +14,22 @@ const monkey = new Animal(
 );
 
 const main = document.querySelector('.maincontent');
+const div = document.querySelector('.newstuff');
+
+const templateSec = (monkey) => {
+  return `
+  <div class="main-div" id="contentId">
+  <figure class="image">
+    <img class="image-size" src=${monkey.image} alt="" />
+  </figure>
+	<p class="headline">${monkey.name}</p>
+  <article class="article-details">Monkeys are the most amazing animals in nature. They can throw feces at other animals, to piss of anyone.
+  They love to do it in zoos. They can breath under water, fly on the skies. Those crazy monkeys. And last but not least
+  they can smile. </article>
+  </div>
+  `;
+};
+div.innerHTML = templateSec(monkey);
 
 const template = (monkey) => {
   return `
@@ -31,6 +47,7 @@ const template = (monkey) => {
 	  <li>Age: ${monkey.age}</li>
     <li>Born date: ${monkey.bornDate}</li>
     <li>Born date: ${monkey.foodType}</li>
+    <li>Something wrong: ${monkey.paw.map((p) => {return `<a>${p}</a>`})}</li>
 	</ul>
   <article class="article-details">Monkeys are the most amazing animals in nature. They can throw feces at other animals, to piss of anyone.
   They love to do it in zoos. They can breath under water, fly on the skies. Those crazy monkeys. And last but not least
@@ -38,7 +55,5 @@ const template = (monkey) => {
   </div>
   `;
 };
-
-console.log(monkey);
 
 main.innerHTML = template(monkey);

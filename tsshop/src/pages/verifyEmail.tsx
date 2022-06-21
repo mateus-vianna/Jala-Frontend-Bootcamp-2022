@@ -25,7 +25,8 @@ const VerifyEmail = () => {
     })
 
     return (<>
-        <h3>Your e-mail has been verified</h3>
+        {user.isVerifed ?
+            <h3>Your e-mail has been verified</h3> : <h3>You haven't been verified yet</h3>}
     </>)
 
 }

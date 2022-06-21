@@ -1,5 +1,3 @@
-import { BottomNavigation, Paper } from "@mui/material";
-import Box from "@mui/material/Box";
 import React from "react";
 
 const Footer = () => {
@@ -11,7 +9,10 @@ const Footer = () => {
         //         </BottomNavigation>
         //     </Box>
         // </Paper>
-        <h1 style={{ marginTop: 20 }}>Footer</h1>
+        <footer className="content-wrapper content-padding">
+            <h1>Footer</h1>
+        </footer>
+
     )
 }
 

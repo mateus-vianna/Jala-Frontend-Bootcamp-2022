@@ -7,7 +7,7 @@ import React, { useState, createContext, useEffect } from "react";
 export const StockContext = createContext();
 
 function App() {
-  const [stock, setStock] = useState();
+  const [stock, setStock] = useState<IProduct>();
 
   let fetchStock = async () => {
     try {

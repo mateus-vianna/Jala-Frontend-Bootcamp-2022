@@ -17,34 +17,28 @@ const Header = () => {
     }
 
     const pages: IPage[] = [
-        { page: "Home", link: <Link to="">Home</Link> },
-        { page: "Products", link: <Link to="products">Products</Link> },
-        { page: "CreateProduct", link: <Link to="create">Create Product</Link> },
-        { page: "Stock", link: <Link to="stock">Stock</Link> },
-        { page: "User", link: <Link to="user">User</Link> },
-        { page: "About", link: <Link to="about">About</Link> },
+        { page: "Home", link: <Link to=""><span className='primary'>Home</span></Link> },
+        { page: "Products", link: <Link to="products"><span className='primary'>Products</span></Link> },
+        { page: "CreateProduct", link: <Link to="create"><span className='primary'>Create Product</span></Link> },
+        { page: "Stock", link: <Link to="stock"><span className='primary'>Stock</span></Link> },
+        { page: "User", link: <Link to="user"><span className='primary'>User</span></Link> },
+        { page: "About", link: <Link to="about"><span className='primary'>About</span></Link> },
     ];
 
 
-    return (<>
-        <AppBar position="static">
-            <Toolbar variant="dense" sx={{ bgcolor: "lightcyan" }} >
-                <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                    {pages.map((page) => (
-                        <Button
-                            key={page.page}
-                            sx={{ my: 2, color: "white", display: "block" }}
-                        >
-                            {page.link}
-                        </Button>
-                    ))}
-                </Box>
-                <Box sx={{ display: { xs: "none", md: "flex", marginLeft: 0 } }}>
-                    <Button onClick={() => handlerLogout()}> Logout</Button>
-                </Box>
-            </Toolbar>
-        </AppBar>
-    </>)
+    return (
+        <div className="header">
+            <div className="header-item"></div>
+            {pages?.map((page: IPage): any => {
+                return (<div className="header-item" key={page.page}>
+                    {page.link}
+                </div>);
+            })}
+            <div className="header-item pointer" onClick={() => handlerLogout()}>
+                <span className='primary'>Logout</span>
+            </div>
+        </div>
+    )
 }
 
 export default Header;

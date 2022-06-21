@@ -18,7 +18,6 @@ export const VerifyEmailCode = {
         jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
             if (err) return res.status(401).json({ message: 'Unable to verify token' });
             const { id, isVerified, verificationString } = decoded;
-            console.log('Check objectId:', ObjectID(id))
             if(!(verificationCode === verificationString)) return res.status(403).json({message:'You need to verify your email again'});
 
             const db = getDbConnection(process.env.DB_NAME);

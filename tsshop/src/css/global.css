@@ -1,0 +1,135 @@
+* { 
+    font-family: 'Courier New', monospace; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Fascinate', cursive;
+    font-family: fantasy;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 24px;
+
+    /* font: italic normal bold 24px/1.5 Helvetica, sans-serif;  */
+    
+}
+
+
+/* input{ 
+    margin-top: 8px;
+    font-size: 18px;
+    border-radius: 5px;
+    border-block-width: 3px;
+
+} */
+
+/* div {
+    padding: 15px;
+} */
+
+/*Project default tag styles*/
+/* 
+
+button {
+    margin-top: 8px;
+    margin-left: 3px;
+    font-size: 18px;
+    border-radius: 5px;
+} */
+
+
+/* h1, h2, h3, h4 {
+    display: block;
+    display: inline;
+}
+
+span { 
+    display: block;
+    display: inline;
+} */
+
+a:-webkit-any-link {
+    color: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.nostyle:link {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+}
+
+
+/* 
+input:hover {
+    color: aqua;
+    background-color: aqua;
+}
+
+input:focus{
+    color:rgb(210, 188, 231);
+    background-color: rgb(210, 188, 231);
+} */
+
+/*Colors*/
+.primary{
+    color:#000836;
+}
+
+/*Layout styles*/
+
+.header {
+    display:grid;
+    /* column-gap: 10px; */
+    background-color: rgb(200, 234, 255);
+    box-shadow: 10px 10px 5px rgb(109, 109, 109);
+    height: 90px;
+    text-align: center;
+}
+
+.header-item { 
+    display: inline-grid;
+    grid-row-start: 1;
+    margin-top: 30px;
+    /* margin-left: 50px; */
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.btn-black { 
+    background-color: hsl(320, 100%, 36%);
+    color: rgb(255, 255, 255);
+}
+
+.btn-black:hover { 
+    background-color:  rgb(86, 0, 167, 0.5);
+    color:#000000
+}
+
+.auto-div {
+    margin: 0 auto;
+    width: 400px;
+    background-color: burlywood;
+    display: block;
+}
+
+.content-wrapper{
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(173, 255, 255);
+}
+.content-padding {
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0px 0px 0px;
+    /* position: relative; */
+}
+.pointer {
+    cursor: pointer;
+}

@@ -4,6 +4,7 @@ import { List, ListItemButton, ListItemText } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { loadProductsThunk, removeProductThunk } from "../redux/reducers/productsReducer";
 import { useLinkClickHandler } from "react-router-dom";
+import IProduct from "../interfaces/IProduct";
 
 const Products: React.FC = () => {
     const products = useAppSelector((state) => state.products.value)
@@ -23,7 +24,7 @@ const Products: React.FC = () => {
             marginRight: 5
         }}>
             <List>
-                {products?.map((product, index = 0) => {
+                {products?.map((product: IProduct, index: number = 0) => {
                     return (
                         <ListItemButton key={index++} onClick={() => handleClick(product.id)} >
                             <ul>

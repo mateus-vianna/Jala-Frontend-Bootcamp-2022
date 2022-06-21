@@ -9,19 +9,11 @@ const CreateProduct = () => {
     const dispatch = useDispatch();
 
     return (
-        <div>
+        <div className='auto-div'>
             <h2>Add product</h2>
             <ul>
                 <li>
                     <input
-                        style={{
-                            marginTop: 8,
-                            backgroundColor: "black",
-                            color: "green",
-                            fontSize: 18,
-                            borderRadius: 5,
-                            borderBlockWidth: 3,
-                        }}
                         placeholder="id"
                         type="text"
                         value={product.id}
@@ -32,15 +24,7 @@ const CreateProduct = () => {
                 </li>
                 <li>
                     <input
-                        style={{
-                            marginTop: 8,
-                            backgroundColor: "black",
-                            color: "green",
-                            fontSize: 18,
 
-                            borderRadius: 5,
-                            borderBlockWidth: 3,
-                        }}
                         placeholder="name"
                         type="text"
                         value={product.name}
@@ -51,15 +35,6 @@ const CreateProduct = () => {
                 </li>
                 <li>
                     <input
-                        style={{
-                            marginTop: 8,
-                            backgroundColor: "black",
-                            color: "green",
-                            fontSize: 18,
-
-                            borderRadius: 5,
-                            borderBlockWidth: 3,
-                        }}
                         placeholder="description"
                         type="text"
                         value={product.description}
@@ -70,15 +45,6 @@ const CreateProduct = () => {
                 </li>
                 <li>
                     <input
-                        style={{
-                            marginTop: 8,
-                            backgroundColor: "black",
-                            color: "green",
-                            fontSize: 18,
-
-                            borderRadius: 5,
-                            borderBlockWidth: 3,
-                        }}
                         placeholder="categoryId"
                         type="text"
                         value={product.categoryId}
@@ -89,15 +55,6 @@ const CreateProduct = () => {
                 </li>
                 <li>
                     <input
-                        style={{
-                            marginTop: 8,
-                            backgroundColor: "black",
-                            color: "green",
-                            fontSize: 18,
-
-                            borderRadius: 5,
-                            borderBlockWidth: 3,
-                        }}
                         placeholder="stockId"
                         type="text"
                         value={product.stockId}
@@ -108,16 +65,7 @@ const CreateProduct = () => {
                 </li>
 
                 <button
-                    style={{
-                        marginTop: 8,
-                        marginLeft: 50,
-                        backgroundColor: "black",
-                        color: "green",
-                        fontSize: 18,
-
-                        borderRadius: 5,
-                        borderBlockWidth: 3,
-                    }}
+                    className='btn-black'
                     onClick={() => dispatch<any>(addProductThunk(product))}
                 >
                     Add Product
